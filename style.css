@@ -1,0 +1,80 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Container for the timeline */
+.timeline-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Each timeline event */
+.timeline-event {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* When the event becomes visible */
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icon styling */
+.timeline-event .event-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Color themes for different phases */
+.timeline-event[data-phase="early"] {
+  background: #fff4e6; /* warm, homely */
+  border-left: 5px solid #ffad60;
+}
+
+.timeline-event[data-phase="mid"] {
+  background: #f0f0f0; /* transitional */
+  border-left: 5px solid #a0a0a0;
+}
+
+.timeline-event[data-phase="late"] {
+  background: #e8f0fe; /* cooler, more abstract */
+  border-left: 5px solid #4d79ff;
+}
+
+/* Headings and text */
+.timeline-event h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.timeline-event p {
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .timeline-container {
+    width: 100%;
+    padding: 10px;
+  }
+  .timeline-event {
+    padding: 15px;
+  }
+}
